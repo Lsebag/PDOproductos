@@ -82,16 +82,17 @@ if (isset($_POST['submit'])){
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 <body>
 <form action="index.php" method="post">
     <fieldset>
-    <legend>Datos de conexión</legend>
+        <legend>Datos de conexión</legend>
         <span style="color=red"><?= $msj ?? "" ?></span>
-    Nombre<input type="text" name="nombre" id=""><br>
-    Pass<input type="text" name="pass" id=""><br>
-    <input type="submit" value="Validar" name="submit">
+        Nombre<input type="text" name="nombre" id=""><br>
+        Pass<input type="text" name="pass" id=""><br>
+        <input type="submit" value="Validar" name="submit">
     </fieldset>
 </form>
 

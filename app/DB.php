@@ -9,8 +9,8 @@ class DB
         try {
             $this->conexion = new PDO(DSN, USER, PASS);
         }catch (PDOException $exception){
-        die("No se ha podido conectar " . $exception->getMessage());
-    }}
+            die("No se ha podido conectar " . $exception->getMessage());
+        }}
 
     /*    public function valida_usuario($nombre,$pass){
             //Aquí creo la sentencia usando parámetros
@@ -80,9 +80,19 @@ class DB
         return $rtdo;
     }
 
-    private function dime_familias():PDOStatement{
-        $sentencia ="select * from familias";
-        return $this->ejecuta_consulta($sentencia );
+    public function dime_categorias():PDOStatement{
+        $sentencia ="select * from familia";
+        return $this->ejecuta_consulta($sentencia);
+        //$rtdo= $this->conexion->query($sentencia);
+        //return $rtdo;
     }
+
+    public function dime_productos():PDOStatement{
+        $sentencia ="select nombre_corto,familia,cod,PVP,descripcion from producto";
+        return $this->ejecuta_consulta($sentencia);
+        //$rtdo= $this->conexion->query($sentencia);
+        //return $rtdo;
+    }
+
 
 }

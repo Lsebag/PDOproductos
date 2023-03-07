@@ -1,0 +1,36 @@
+fieldset{
+    border: 0.25em solid;
+    align-items : center;
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    margin-left: -115px;
+    margin-top: -80px;
+    padding:10px;
+    background-color: #eee;
+}
+
+legend{
+    font-size: 2em;
+    color: green;
+    font-weight: bold;
+}
+button[type=submit] {
+    padding:5px 15px 10px 10px;
+    background:#ccc;
+    border:2rem;
+    cursor:pointer;
+    border-radius: 5px;
+    margin: 1em;
+    font-size: 1em;
+}
+
+table{
+    padding-left:1rem;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td,th,tr{
+    border: 1px solid black;
+}
