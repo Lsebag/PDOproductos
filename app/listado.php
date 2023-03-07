@@ -42,6 +42,17 @@ if (isset($_POST['verProductos'])){
 }
 
 
+if (isset($_POST['insertarProducto'])){
+    $cod=$_POST['cod'];
+    $nombre=$_POST['nombre'];
+    $nombre_corto=$_POST['nombre_corto'];
+    $descripcion=$_POST['descripcion'];
+    $PVP=$_POST['PVP'];
+    $familia=$_POST['familia'];
+    $db->insertar_producto($cod,$nombre,$nombre_corto,$descripcion,$PVP,$familia);
+
+}
+
 
 ?>
 
@@ -52,7 +63,7 @@ if (isset($_POST['verProductos'])){
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <style>
         table{
             padding-left:1rem;
@@ -72,6 +83,10 @@ if (isset($_POST['verProductos'])){
             margin: 1em;
             font-size: 1em;
         }
+        input{
+            margin-bottom: .5rem;
+        }
+
     </style>
     <title>Sitio.php</title>
 </head>
@@ -85,7 +100,32 @@ if (isset($_POST['verProductos'])){
     <button type="submit" name="verProductos">Ver todos los productos</button>
     <button type="submit" name="ocultarProductos">Ocultar lista de productos</button><br>
     <?= $msjProductos??"" ?>
-
 </form>
+
+
+    <h2>Formulario para insertar producto</h2>
+<form action="listado.php" method="post">
+    <label for="cod">Código</label>
+    <input type="text" name="cod" id="cod"><br>
+
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre"><br>
+
+    <label for="nombre_corto">Nombre corto</label>
+    <input type="text" name="nombre_corto" id="nombre_corto"><br>
+
+    <label for="descripcion">Descripción</label>
+    <input type="text" name="descripcion" id="descripcion"><br>
+
+    <label for="PVP">Precio</label>
+    <input type="text" name="PVP" id="PVP"><br>
+
+    <label for="familia">Categoría</label>
+    <input type="text" name="familia" id="familia"><br>
+
+
+    <button type="submit" name="insertarProducto">Insertar producto</button>
+</form>
+
 </body>
 </html>

@@ -94,5 +94,22 @@ class DB
         //return $rtdo;
     }
 
+    public function insertar_producto($cod,$nombre,$nombre_corto,$descripcion,$PVP,$familia){
+        $sentencia="insert into producto (cod,nombre,nombre_corto,descripcion,PVP,familia)
+         VALUES (:cod,:nombre,:nombre_corto,:descripcion,:PVP,:familia)";
+        $rtdo=$this->conexion->prepare($sentencia);
+        $rtdo->bindParam(':cod',$cod);
+        $rtdo->bindParam(':nombre',$nombre);
+        $rtdo->bindParam(':nombre_corto',$nombre_corto);
+        $rtdo->bindParam(':descripcion',$descripcion);
+        $rtdo->bindParam(':PVP',$PVP);
+        $rtdo->bindParam(':familia',$familia);
+        $rtdo->execute();
 
+        if ($rtdo->rowCount()>0)
+            return true;
+        else
+            return false;
+
+    }
 }
